@@ -5,5 +5,9 @@ interface GridProps {
 }
 
 export const Grid: FC<GridProps> = ({value}) => {
-  return <div data-testid="game-grid">{value}</div>
+  return value === 'X' || value === 'O' ? (
+    <div data-testid="game-grid">{value}</div>
+  ) : (
+    <div data-testid="game-grid"></div>
+  )
 }
