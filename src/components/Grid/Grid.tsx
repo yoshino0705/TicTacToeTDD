@@ -1,7 +1,9 @@
 import {FC} from 'react'
 
-interface GridProps {}
+interface GridProps {
+  value: string
+}
 
-export const Grid: FC = ({}: GridProps) => {
-  return <div data-testid="game-grid"></div>
+export const Grid: FC<GridProps> = ({value}) => {
+  return <div data-testid="game-grid">{value}</div>
 }
