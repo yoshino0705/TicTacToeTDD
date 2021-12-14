@@ -1,4 +1,4 @@
-import './App.css';
+import './App.css'
 import {Board} from './components/Board'
 
 function App() {
@@ -6,7 +6,7 @@ function App() {
     <div className="App">
       <Board />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
