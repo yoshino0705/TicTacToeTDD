@@ -6,4 +6,14 @@ describe('Grid', () => {
     const wrapper: ShallowWrapper = shallow(<Grid value="X" />)
     expect(wrapper.text()).toBe('X')
   })
+
+  it('should render O if value is O', () => {
+    const wrapper: ShallowWrapper = shallow(<Grid value="O" />)
+    expect(wrapper.text()).toBe('O')
+  })
+
+  it('should render blank if value is not X or O', () => {
+    const wrapper: ShallowWrapper = shallow(<Grid value="Y" />)
+    expect(wrapper.text()).toBe('')
+  })
 })
