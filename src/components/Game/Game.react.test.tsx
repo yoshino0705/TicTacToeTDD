@@ -134,4 +134,26 @@ describe('Game', () => {
       "Now It's X's Turn!"
     )
   })
+
+  it('should be able to reset', () => {
+    // X clicking on top left
+    wrapper.find('[data-testid="game-grid"]').at(0).simulate('click')
+    // O clicking on top middle
+    wrapper.find('[data-testid="game-grid"]').at(1).simulate('click')
+    // X clicking on top right
+    wrapper.find('[data-testid="game-grid"]').at(2).simulate('click')
+    expect(wrapper.find('[value="X"]')).toHaveLength(2)
+    expect(wrapper.find('[value="O"]')).toHaveLength(1)
+    expect(wrapper.find('[data-testid="announcer"]').text()).toBe(
+      "Now It's O's Turn!"
+    )
+
+    // back track 1 step
+    wrapper.find('[data-testid="reset-button"]').simulate('click')
+    expect(wrapper.find('[value="X"]')).toHaveLength(0)
+    expect(wrapper.find('[value="O"]')).toHaveLength(0)
+    expect(wrapper.find('[data-testid="announcer"]').text()).toBe(
+      "Now It's X's Turn!"
+    )
+  })
 })
