@@ -32,3 +32,10 @@ export const getGrids = ({steps = []}: GetGridsProps) => {
 
   return grids
 }
+
+interface GetTurnProps {
+  steps?: Step[]
+}
+export const getTurn = ({steps = []}: GetTurnProps) => {
+  return steps.length % 2 === 0 ? 'X' : 'O'
+}

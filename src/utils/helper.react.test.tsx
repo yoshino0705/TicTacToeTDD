@@ -50,13 +50,12 @@ describe('getTurn', () => {
   })
 
   it('should return O if length of steps is odd', () => {
-    expect(getTurn({steps: []})).toBe('O')
     expect(
       getTurn({
         steps: [
           {symbol: 'X', row: 1, column: 0},
           {symbol: 'O', row: 1, column: 2},
-          {symbol: 'O', row: 1, column: 1},
+          {symbol: 'X', row: 1, column: 1},
         ],
       })
     ).toBe('O')
