@@ -32,4 +32,11 @@ describe('Grid', () => {
     wrapper.simulate('click')
     expect(onClick).toBeCalledTimes(0)
   })
+
+  it('should not be clickable if is disabled', () => {
+    const onClick = jest.fn()
+    const wrapper: ShallowWrapper = shallow(<Grid disabled onClick={onClick} />)
+    wrapper.simulate('click')
+    expect(onClick).toBeCalledTimes(0)
+  })
 })
