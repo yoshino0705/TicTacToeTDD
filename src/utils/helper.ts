@@ -17,17 +17,18 @@ interface GetPositionProps {
   row: RowRange
   column: ColumnRange
 }
-export const getPosition = ({ row, column}:GetPositionProps) => {
+export const getPosition = ({row, column}: GetPositionProps) => {
   return row * SIZE + column
 }
 
 interface GetGridsProps {
   steps?: Step[]
 }
-export const getGrids = ({ steps }: GetGridsProps) => {
+export const getGrids = ({steps = []}: GetGridsProps) => {
   const grids = new Array(TOTAL_GRIDS).fill('')
-  steps?.map(step => {
+  for (const step of steps) {
     grids[getPosition({row: step.row, column: step.column})] = step.symbol
-  })
+  }
+
   return grids
 }

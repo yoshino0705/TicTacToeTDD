@@ -7,7 +7,7 @@ import {getGrids} from '../../utils/helper'
 
 interface BoardProps {}
 
-export const Board: FC<BoardProps> = ({}) => {
+export const Board: FC<BoardProps> = () => {
   const [steps, setSteps] = useState<Step[]>([])
   const grids = getGrids({steps})
 
