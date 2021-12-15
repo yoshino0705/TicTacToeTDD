@@ -1,4 +1,4 @@
-import {getSymbol} from './getSymbol'
+import {getSymbol} from './helper'
 
 describe('getSymbol', () => {
   it('should return symbol based an array of grids on row and column of a grid', () => {
