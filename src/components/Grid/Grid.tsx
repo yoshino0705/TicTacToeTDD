@@ -3,23 +3,28 @@ import classNames from 'classnames'
 import './Grid.css'
 
 interface GridProps {
-  value?: string
+  disabled?: boolean
   onClick?: MouseEventHandler
+  value?: string
 }
 
-export const Grid: FC<GridProps> = ({value, onClick}) => {
+export const Grid: FC<GridProps> = ({disabled, onClick, value}) => {
   return value === 'X' || value === 'O' ? (
     <div
-      className={classNames('grid', 'preventSelection')}
+      className={classNames('grid', 'preventSelection', 'gridDisabled')}
       data-testid="game-grid"
     >
       {value}
     </div>
   ) : (
     <div
-      className={classNames('grid', 'preventSelection')}
+      className={classNames(
+        'grid',
+        'preventSelection',
+        disabled && 'gridDisabled'
+      )}
       data-testid="game-grid"
-      onClick={onClick}
+      onClick={disabled ? undefined : onClick}
     ></div>
   )
 }

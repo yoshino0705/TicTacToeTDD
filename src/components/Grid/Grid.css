@@ -18,6 +18,10 @@
   user-select: none;
 }
 
+.gridDisabled {
+  cursor: not-allowed;
+}
+
 @media only screen and (min-width: 768px) {
   .grid {
     width: 100px;
