@@ -2,8 +2,8 @@ import {mount} from 'enzyme'
 import React from 'react'
 
 import {Board} from './Board'
-import {Step, RowRange, ColumnRange} from '../../utils/types'
-import {SIZE} from '../../utils/constants'
+import {Step} from '../../utils/types'
+import {TOTAL_GRIDS} from '../../utils/constants'
 
 describe('Board', () => {
   it('should render 9 grids', () => {
@@ -14,14 +14,11 @@ describe('Board', () => {
 
   it('should render 9 Xs', () => {
     const mockSteps: Step[] = []
-    for (let i = 0; i < SIZE; i++) {
-      for (let j = 0; j < SIZE; j++) {
-        mockSteps.push({
-          symbol: 'X',
-          row: i as RowRange,
-          column: j as ColumnRange,
-        })
-      }
+    for (let i = 0; i < TOTAL_GRIDS; i++) {
+      mockSteps.push({
+        symbol: 'X',
+        position: i,
+      })
     }
 
     React.useState = jest.fn().mockReturnValue([mockSteps, {}])
@@ -32,14 +29,11 @@ describe('Board', () => {
 
   it('should render 9 Os', () => {
     const mockSteps: Step[] = []
-    for (let i = 0; i < SIZE; i++) {
-      for (let j = 0; j < SIZE; j++) {
-        mockSteps.push({
-          symbol: 'O',
-          row: i as RowRange,
-          column: j as ColumnRange,
-        })
-      }
+    for (let i = 0; i < TOTAL_GRIDS; i++) {
+      mockSteps.push({
+        symbol: 'O',
+        position: i,
+      })
     }
 
     React.useState = jest.fn().mockReturnValue([mockSteps, {}])

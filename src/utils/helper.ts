@@ -1,24 +1,15 @@
-import {RowRange, ColumnRange, Step} from './types'
+import {Step} from './types'
 import {TOTAL_GRIDS, SIZE} from './constants'
 
 interface GetSymbolProps {
   grids: string[]
-  row: RowRange
-  column: ColumnRange
+  position: number
 }
-export const getSymbol = ({grids, row, column}: GetSymbolProps) => {
+export const getSymbol = ({grids, position}: GetSymbolProps) => {
   if (grids.length !== TOTAL_GRIDS) {
     return ''
   }
-  return grids[getPosition({row, column})]
-}
-
-interface GetPositionProps {
-  row: RowRange
-  column: ColumnRange
-}
-export const getPosition = ({row, column}: GetPositionProps) => {
-  return row * SIZE + column
+  return grids[position]
 }
 
 interface GetGridsProps {
@@ -27,7 +18,7 @@ interface GetGridsProps {
 export const getGrids = ({steps = []}: GetGridsProps) => {
   const grids = new Array(TOTAL_GRIDS).fill('')
   for (const step of steps) {
-    grids[getPosition({row: step.row, column: step.column})] = step.symbol
+    grids[step.position] = step.symbol
   }
 
   return grids
