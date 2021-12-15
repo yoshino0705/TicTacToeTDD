@@ -26,4 +26,9 @@ describe('Game', () => {
     expect(wrapper.find('[value="X"]')).toHaveLength(5)
     expect(wrapper.find('[value="O"]')).toHaveLength(4)
   })
+
+  it("should show X's turn", () => {
+    const component = wrapper.find('[data-testid="announcer"]')
+    expect(component.text()).toBe("Now It's X's Turn!")
+  })
 })
