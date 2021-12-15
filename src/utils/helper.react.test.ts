@@ -1,6 +1,6 @@
 import {getSymbol, getGrids, getTurn, getGameResult} from './helper'
 import {Step} from './types'
-import {TOTAL_GRIDS} from './constants'
+import {TOTAL_GRIDS, GAME_RESULT} from './constants'
 
 describe('getSymbol', () => {
   it('should return symbol based an array of grids on row and column of a grid', () => {
@@ -64,6 +64,6 @@ describe('getGameResult', () => {
           {symbol: 'X', position: 1},
         ],
       })
-    ).toBe('X')
+    ).toBe(GAME_RESULT.xWin)
   })
 })
