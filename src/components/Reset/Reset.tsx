@@ -11,7 +11,11 @@ export const Reset: FC<ResetProps> = ({onClick}) => {
     return <></>
   }
   return (
-    <div className={classNames('reset')} data-testid="reset-button">
+    <div
+      className={classNames('reset')}
+      data-testid="reset-button"
+      onClick={onClick}
+    >
       Reset
     </div>
   )

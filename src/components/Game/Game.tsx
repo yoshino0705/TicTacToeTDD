@@ -48,7 +48,9 @@ export const Game: FC = () => {
               }
             : null
         }
-        onReset={() => {}}
+        onReset={() => {
+          setSteps([])
+        }}
       />
       <Board steps={steps} setSteps={setSteps} currentResult={gameResult} />
     </div>
