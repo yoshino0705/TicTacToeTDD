@@ -19,7 +19,9 @@ export const Game: FC = () => {
     <div className={classNames('game')}>
       <Announcer
         text={
-          gameResult === GAME_RESULT.xWin ? (
+          gameResult === GAME_RESULT.tie ? (
+            <span>It's a Tie!</span>
+          ) : gameResult === GAME_RESULT.xWin ? (
             <span>
               <span className={classNames('turn')}>X</span> Wins!
             </span>
