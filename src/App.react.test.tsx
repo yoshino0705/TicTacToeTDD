@@ -12,4 +12,9 @@ describe('App', () => {
     const component = wrapper.find('[data-testid="game-board"]')
     expect(component).toHaveLength(1)
   })
+
+  it('should render announcer', () => {
+    const component = wrapper.find('[data-testid="announcer"]')
+    expect(component).toHaveLength(1)
+  })
 })
