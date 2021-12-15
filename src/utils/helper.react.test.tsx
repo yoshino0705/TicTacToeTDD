@@ -17,18 +17,21 @@ describe('getSymbol', () => {
 
 describe('getPosition', () => {
   it('should return calculated position in a 3 by 3 board based on row and column', () => {
-    expect(getPosition({row:0, column: 0})).toBe(0)
-    expect(getPosition({row:1, column: 1})).toBe(4)
-    expect(getPosition({row:2, column: 2})).toBe(8)
+    expect(getPosition({row: 0, column: 0})).toBe(0)
+    expect(getPosition({row: 1, column: 1})).toBe(4)
+    expect(getPosition({row: 2, column: 2})).toBe(8)
   })
 })
 
 describe('getGrids', () => {
   it('should parse steps into an ordered array of grids information', () => {
-    const steps: Step[] = [{ symbol: 'X', row: 1, column: 0 }, { symbol: 'O', row: 1, column: 2 }]
+    const steps: Step[] = [
+      {symbol: 'X', row: 1, column: 0},
+      {symbol: 'O', row: 1, column: 2},
+    ]
     const expectation: string[] = new Array(TOTAL_GRIDS).fill('')
-    expectation[getPosition({ row: 1, column: 0 })] = 'X'
-    expectation[getPosition({ row: 1, column: 2 })] = 'O'
+    expectation[getPosition({row: 1, column: 0})] = 'X'
+    expectation[getPosition({row: 1, column: 2})] = 'O'
     expect(getGrids({steps})).toEqual(expectation)
   })
 })
