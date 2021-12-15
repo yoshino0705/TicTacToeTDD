@@ -89,9 +89,9 @@ describe('getGameResult', () => {
           {symbol: 'X', position: 7},
           {symbol: 'X', position: 8},
           {symbol: 'O', position: 1},
-          {symbol: 'X', position: 4},
+          {symbol: 'O', position: 4},
           {symbol: 'O', position: 5},
-          {symbol: 'X', position: 6},
+          {symbol: 'O', position: 6},
         ],
       })
     ).toBe(GAME_RESULT.tie)
