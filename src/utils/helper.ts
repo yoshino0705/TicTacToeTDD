@@ -13,4 +13,3 @@ export const getSymbol = ({grids, row, column}: GetSymbolProps) => {
   }
   return grids[row * 3 + column]
 }
-
