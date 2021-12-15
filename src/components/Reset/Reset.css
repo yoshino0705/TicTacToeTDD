@@ -1,4 +1,4 @@
-.rewind {
+.reset {
   width: 100px;
   height: 50px;
   border: var(--rewind-border) solid 1px;
@@ -11,7 +11,7 @@
 }
 
 @media only screen and (min-width: 768px) {
-  .rewind {
+  .reset {
     width: 100px;
     height: 50px;
     font-size: 50pt;
@@ -19,7 +19,7 @@
 }
 
 @media only screen and (min-width: 1024px) {
-  .rewind {
+  .reset {
     width: 200px;
     height: 150px;
     font-size: 80pt;

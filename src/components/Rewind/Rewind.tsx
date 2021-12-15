@@ -2,10 +2,10 @@ import {FC, MouseEventHandler} from 'react'
 import classNames from 'classnames'
 import './Rewind.css'
 
-interface GridProps {
+interface RewindProps {
   onClick?: MouseEventHandler
 }
 
-export const Rewind: FC<GridProps> = () => {
+export const Rewind: FC<RewindProps> = () => {
   return <div className={classNames('rewind')}>Rewind</div>
 }

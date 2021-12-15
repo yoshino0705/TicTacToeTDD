@@ -1,5 +1,5 @@
 import {ShallowWrapper, shallow} from 'enzyme'
-import {Rewind} from '.'
+import {Rewind} from './Rewind'
 
 describe('Rewind', () => {
   it('should render Rewind text', () => {
