@@ -11,7 +11,7 @@ export const getSymbol = ({grids, row, column}: GetSymbolProps) => {
   if (grids.length !== TOTAL_GRIDS) {
     return ''
   }
-  return grids[row * 3 + column]
+  return grids[getPosition({row, column})]
 }
 
 interface GetPositionProps {
