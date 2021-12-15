@@ -23,8 +23,8 @@ describe('Game', () => {
     wrapper.find('[data-testid="game-grid"]').forEach((node) => {
       node.simulate('click')
     })
-    expect(wrapper.find('[value="X"]')).toHaveLength(5)
-    expect(wrapper.find('[value="O"]')).toHaveLength(4)
+    expect(wrapper.find('[value="X"]')).toHaveLength(4)
+    expect(wrapper.find('[value="O"]')).toHaveLength(3)
   })
 
   it("should show X's turn", () => {

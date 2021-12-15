@@ -37,7 +37,7 @@ export const Game: FC = () => {
           )
         }
       />
-      <Board steps={steps} setSteps={setSteps} />
+      <Board steps={steps} setSteps={setSteps} currentResult={gameResult} />
     </div>
   )
 }

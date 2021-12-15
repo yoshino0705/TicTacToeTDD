@@ -3,6 +3,7 @@ import classNames from 'classnames'
 
 import {Grid} from '../Grid'
 import {Step} from '../../utils/types'
+import {GAME_RESULT} from '../../utils/constants'
 
 import {getGrids, getTurn} from '../../utils/helper'
 import './Board.css'
@@ -10,9 +11,10 @@ import './Board.css'
 interface BoardProps {
   steps: Step[]
   setSteps: Function
+  currentResult: string
 }
 
-export const Board: FC<BoardProps> = ({steps, setSteps}) => {
+export const Board: FC<BoardProps> = ({steps, setSteps, currentResult}) => {
   const grids = getGrids({steps})
 
   return (
@@ -28,6 +30,7 @@ export const Board: FC<BoardProps> = ({steps, setSteps}) => {
             }
             setSteps([...steps, newStep])
           }}
+          disabled={currentResult !== GAME_RESULT.ongoing}
         />
       ))}
     </div>
