@@ -1,0 +1,19 @@
+.board {
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+@media only screen and (min-width: 768px) {
+  .board {
+    width: 350px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .board {
+    width: 600px;
+  }
+}

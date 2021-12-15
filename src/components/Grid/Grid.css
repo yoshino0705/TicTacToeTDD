@@ -1,0 +1,36 @@
+.grid {
+  width: 50px;
+  height: 50px;
+  border: var(--grid-border) solid 1px;
+  color: var(--symbol-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20pt;
+  cursor: pointer;
+}
+
+.preventSelection {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .grid {
+    width: 100px;
+    height: 100px;
+    font-size: 50pt;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .grid {
+    width: 150px;
+    height: 150px;
+    font-size: 80pt;
+  }
+}

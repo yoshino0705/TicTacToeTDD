@@ -1,4 +1,6 @@
 import {FC, MouseEventHandler} from 'react'
+import classNames from 'classnames'
+import './Grid.css'
 
 interface GridProps {
   value?: string
@@ -7,8 +9,17 @@ interface GridProps {
 
 export const Grid: FC<GridProps> = ({value, onClick}) => {
   return value === 'X' || value === 'O' ? (
-    <div data-testid="game-grid">{value}</div>
+    <div
+      className={classNames('grid', 'preventSelection')}
+      data-testid="game-grid"
+    >
+      {value}
+    </div>
   ) : (
-    <div data-testid="game-grid" onClick={onClick}></div>
+    <div
+      className={classNames('grid', 'preventSelection')}
+      data-testid="game-grid"
+      onClick={onClick}
+    ></div>
   )
 }
