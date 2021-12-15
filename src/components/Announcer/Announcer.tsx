@@ -2,7 +2,7 @@ import {FC} from 'react'
 
 import classNames from 'classnames'
 import './Announcer.css'
-import '../Grid/Grid.css'
+import '../Button.css'
 
 interface AnnouncerProps {
   text: JSX.Element

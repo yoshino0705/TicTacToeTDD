@@ -1,6 +1,7 @@
 import {FC, MouseEventHandler} from 'react'
 import classNames from 'classnames'
 import './Grid.css'
+import '../Button.css'
 
 interface GridProps {
   disabled?: boolean

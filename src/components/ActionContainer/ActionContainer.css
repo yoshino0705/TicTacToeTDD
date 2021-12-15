@@ -1,18 +1,18 @@
 .actionContainer {
-  width: 100px;
+  width: 280px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
 @media only screen and (min-width: 768px) {
   .actionContainer {
-    width: 100px;
+    width: 700px;
   }
 }
 
 @media only screen and (min-width: 1024px) {
   .actionContainer {
-    width: 200px;
+    width: 700px;
   }
 }

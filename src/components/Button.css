@@ -1,0 +1,39 @@
+.button {
+  width: 50px;
+  height: 20px;
+  margin: 0 8px;
+  border: var(--button-border) solid 2px;
+  color: var(--symbol-color);
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10pt;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.preventSelection {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .button {
+    width: 200px;
+    height: 50px;
+    font-size: 25pt;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .button {
+    width: 200px;
+    height: 50px;
+    font-size: 25pt;
+  }
+}

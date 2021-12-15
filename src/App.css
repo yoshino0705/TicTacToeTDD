@@ -4,6 +4,9 @@
   --symbol-color: #ffffff;
   --announcer-text: #ffffff;
   --turn-text: yellow;
+  --reset-button: #91020a;
+  --rewind-button: #320796;
+  --button-border: #ffffff;
 }
 
 .App {
