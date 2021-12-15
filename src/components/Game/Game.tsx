@@ -23,6 +23,10 @@ export const Game: FC = () => {
             <span>
               <span className={classNames('turn')}>X</span> Wins!
             </span>
+          ) : gameResult === GAME_RESULT.oWin ? (
+            <span>
+              <span className={classNames('turn')}>O</span> Wins!
+            </span>
           ) : (
             <span>
               Now It's <span className={classNames('turn')}>{turn}</span>'s
