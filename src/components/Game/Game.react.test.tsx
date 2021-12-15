@@ -95,4 +95,23 @@ describe('Game', () => {
     wrapper.find('[data-testid="game-grid"]').at(8).simulate('click')
     expect(component.text()).toBe("It's a Tie!")
   })
+
+  it('should not allow clicking on empty grids when game is concluded', () => {
+    const component = wrapper.find('[data-testid="announcer"]')
+
+    // X clicking on top left
+    wrapper.find('[data-testid="game-grid"]').at(0).simulate('click')
+    // O clicking on top middle
+    wrapper.find('[data-testid="game-grid"]').at(1).simulate('click')
+    // X clicking on middle left
+    wrapper.find('[data-testid="game-grid"]').at(3).simulate('click')
+    // O clicking on top right
+    wrapper.find('[data-testid="game-grid"]').at(2).simulate('click')
+    // X clicking on bottom left
+    wrapper.find('[data-testid="game-grid"]').at(6).simulate('click')
+    // at this point X has won
+
+    wrapper.find('[data-testid="game-grid"]').at(8).simulate('click')
+    expect(wrapper.find('[data-testid="game-grid"]').at(8).text()).toBeFalsy()
+  })
 })
