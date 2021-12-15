@@ -29,6 +29,6 @@ describe('getGrids', () => {
     const expectation: string[] = new Array(TOTAL_GRIDS).fill('')
     expectation[getPosition({ row: 1, column: 0 })] = 'X'
     expectation[getPosition({ row: 1, column: 2 })] = 'O'
-    expect(getGrids(steps)).toBe(expectation)
+    expect(getGrids({steps})).toEqual(expectation)
   })
 })
