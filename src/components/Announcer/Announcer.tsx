@@ -1,9 +1,16 @@
 import {FC} from 'react'
 
+import classNames from 'classnames'
+import './Announcer.css'
+
 interface AnnouncerProps {
-  text: string
+  text: JSX.Element
 }
 
 export const Announcer: FC<AnnouncerProps> = ({text}) => {
-  return <div data-testid="announcer">{text}</div>
+  return (
+    <div className={classNames('announcer')} data-testid="announcer">
+      {text}
+    </div>
+  )
 }

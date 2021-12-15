@@ -1,0 +1,17 @@
+.game {
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.turn {
+  color: var(--turn-text);
+}
+
+@media only screen and (min-width: 768px) {
+  .game {
+    height: 100%;
+  }
+}

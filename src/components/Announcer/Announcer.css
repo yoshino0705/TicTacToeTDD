@@ -1,0 +1,16 @@
+.announcer {
+  color: var(--announcer-text);
+  font-size: 16pt;
+}
+
+@media only screen and (min-width: 768px) {
+  .announcer {
+    font-size: 48pt;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .announcer {
+    font-size: 48pt;
+  }
+}

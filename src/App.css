@@ -2,12 +2,15 @@
   --app-background: #282c34;
   --grid-border: seagreen;
   --symbol-color: #ffffff;
+  --announcer-text: #ffffff;
+  --turn-text: yellow;
 }
 
 .App {
   text-align: center;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
   width: 100vw;
   height: 100vh;
