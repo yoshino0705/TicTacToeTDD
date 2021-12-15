@@ -31,4 +31,10 @@ describe('Game', () => {
     const component = wrapper.find('[data-testid="announcer"]')
     expect(component.text()).toBe("Now It's X's Turn!")
   })
+
+  it("should show O's turn", () => {
+    const component = wrapper.find('[data-testid="announcer"]')
+    wrapper.find('[data-testid="game-grid"]').at(0).simulate('click')
+    expect(component.text()).toBe("Now It's O's Turn!")
+  })
 })
