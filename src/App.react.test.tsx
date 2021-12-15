@@ -8,13 +8,8 @@ describe('App', () => {
     wrapper = mount(<App />)
   })
 
-  it('should render game board', () => {
-    const component = wrapper.find('[data-testid="game-board"]')
-    expect(component).toHaveLength(1)
-  })
-
-  it('should render announcer', () => {
-    const component = wrapper.find('[data-testid="announcer"]')
+  it('should render App', () => {
+    const component = wrapper.find('[data-testid="app"]')
     expect(component).toHaveLength(1)
   })
 })
