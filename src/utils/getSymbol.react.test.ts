@@ -7,4 +7,8 @@ describe('getSymbol', () => {
       grids[3] = 'O'
       expect(getSymbol({grids, row: 1, column: 0})).toBe('O')
   })
+
+  it('should return blank if length of grids is not equal to 9', () => {
+      expect(getSymbol({grids: [], row: 1, column: 0})).toBe('')
+  })
 })
