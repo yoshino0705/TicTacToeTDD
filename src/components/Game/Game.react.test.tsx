@@ -127,7 +127,7 @@ describe('Game', () => {
     )
 
     // back track 1 step
-    wrapper.find('[data-testid="rewind-button"]')
+    wrapper.find('[data-testid="rewind-button"]').simulate('click')
     expect(wrapper.find('[value="X"]')).toHaveLength(1)
     expect(wrapper.find('[value="O"]')).toHaveLength(1)
     expect(wrapper.find('[data-testid="announcer"]').text()).toBe(

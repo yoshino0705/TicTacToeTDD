@@ -8,6 +8,7 @@ import {getTurn, getGameResult} from '../../utils/helper'
 
 import {Announcer} from '../Announcer'
 import {Board} from '../Board'
+import {ActionContainer} from '../ActionContainer'
 import './Game.css'
 
 export const Game: FC = () => {
@@ -36,6 +37,18 @@ export const Game: FC = () => {
             </span>
           )
         }
+      />
+      <ActionContainer
+        onRewind={
+          steps.length > 0
+            ? () => {
+                const nextSteps = [...steps]
+                nextSteps.pop()
+                setSteps(nextSteps)
+              }
+            : null
+        }
+        onReset={() => {}}
       />
       <Board steps={steps} setSteps={setSteps} currentResult={gameResult} />
     </div>

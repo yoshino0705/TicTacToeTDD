@@ -6,8 +6,8 @@ import {Reset} from '../Reset'
 import {Rewind} from '../Rewind'
 
 interface ActionContainerProps {
-  onReset: Function
-  onRewind: Function
+  onReset: MouseEventHandler | null
+  onRewind: MouseEventHandler | null
 }
 
 export const ActionContainer: FC<ActionContainerProps> = ({
@@ -16,8 +16,8 @@ export const ActionContainer: FC<ActionContainerProps> = ({
 }) => {
   return (
     <div className={classNames('actionContainer')}>
-      <Rewind />
-      <Reset />
+      <Rewind onClick={onRewind} />
+      <Reset onClick={onReset} />
     </div>
   )
 }
