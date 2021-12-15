@@ -1,4 +1,4 @@
-import {getSymbol, getPosition, getGrids} from './helper'
+import {getSymbol, getPosition, getGrids, getTurn} from './helper'
 import {Step} from './types'
 import {TOTAL_GRIDS} from './constants'
 
@@ -33,5 +33,32 @@ describe('getGrids', () => {
     expectation[getPosition({row: 1, column: 0})] = 'X'
     expectation[getPosition({row: 1, column: 2})] = 'O'
     expect(getGrids({steps})).toEqual(expectation)
+  })
+})
+
+describe('getTurn', () => {
+  it('should return X if length of steps is even', () => {
+    expect(getTurn({steps: []})).toBe('X')
+    expect(
+      getTurn({
+        steps: [
+          {symbol: 'X', row: 1, column: 0},
+          {symbol: 'O', row: 1, column: 2},
+        ],
+      })
+    ).toBe('X')
+  })
+
+  it('should return O if length of steps is odd', () => {
+    expect(getTurn({steps: []})).toBe('O')
+    expect(
+      getTurn({
+        steps: [
+          {symbol: 'X', row: 1, column: 0},
+          {symbol: 'O', row: 1, column: 2},
+          {symbol: 'O', row: 1, column: 1},
+        ],
+      })
+    ).toBe('O')
   })
 })
