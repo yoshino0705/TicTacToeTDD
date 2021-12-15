@@ -7,5 +7,9 @@ interface ResetProps {
 }
 
 export const Reset: FC<ResetProps> = () => {
-  return <div className={classNames('reset')}>Reset</div>
+  return (
+    <div className={classNames('reset')} data-testid="reset-button">
+      Reset
+    </div>
+  )
 }

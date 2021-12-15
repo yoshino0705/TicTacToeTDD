@@ -7,5 +7,9 @@ interface RewindProps {
 }
 
 export const Rewind: FC<RewindProps> = () => {
-  return <div className={classNames('rewind')}>Rewind</div>
+  return (
+    <div className={classNames('rewind')} data-testid="rewind-button">
+      Rewind
+    </div>
+  )
 }
