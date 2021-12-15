@@ -1,9 +1,9 @@
 import {ShallowWrapper, shallow} from 'enzyme'
-import {Rewind} from './Rewind'
+import {Rewind} from '.'
 
 describe('Rewind', () => {
   it('should render Rewind text', () => {
-    const wrapper: ShallowWrapper = shallow(<Rewind value="X" />)
+    const wrapper: ShallowWrapper = shallow(<Rewind />)
     expect(wrapper.text()).toBe('Rewind')
   })
 })
