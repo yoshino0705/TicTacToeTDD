@@ -23,4 +23,13 @@ describe('Grid', () => {
     wrapper.simulate('click')
     expect(onClick).toBeCalledTimes(1)
   })
+
+  it('should not be clickable if it has a value', () => {
+    const onClick = jest.fn()
+    const wrapper: ShallowWrapper = shallow(
+      <Grid value="X" onClick={onClick} />
+    )
+    wrapper.simulate('click')
+    expect(onClick).toBeCalledTimes(0)
+  })
 })
