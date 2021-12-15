@@ -16,4 +16,11 @@ describe('Grid', () => {
     const wrapper: ShallowWrapper = shallow(<Grid value="Y" />)
     expect(wrapper.text()).toBe('')
   })
+
+  it('should be clickable', () => {
+    const onClick = jest.fn()
+    const wrapper: ShallowWrapper = shallow(<Grid onClick={onClick} />)
+    wrapper.simulate('click')
+    expect(onClick).toBeCalledTimes(1)
+  })
 })
