@@ -66,4 +66,34 @@ describe('getGameResult', () => {
       })
     ).toBe(GAME_RESULT.xWin)
   })
+
+  it('should return O if O wins', () => {
+    expect(
+      getGameResult({
+        steps: [
+          {symbol: 'O', position: 5},
+          {symbol: 'O', position: 8},
+          {symbol: 'O', position: 2},
+        ],
+      })
+    ).toBe(GAME_RESULT.oWin)
+  })
+
+  it('should return tie if all grids have been filled', () => {
+    expect(
+      getGameResult({
+        steps: [
+          {symbol: 'X', position: 0},
+          {symbol: 'O', position: 1},
+          {symbol: 'X', position: 2},
+          {symbol: 'O', position: 3},
+          {symbol: 'X', position: 4},
+          {symbol: 'O', position: 5},
+          {symbol: 'X', position: 6},
+          {symbol: 'O', position: 7},
+          {symbol: 'X', position: 8},
+        ],
+      })
+    ).toBe(GAME_RESULT.tie)
+  })
 })
