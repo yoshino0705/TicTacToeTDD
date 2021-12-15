@@ -1,4 +1,4 @@
-import {getSymbol, getGrids, getTurn} from './helper'
+import {getSymbol, getGrids, getTurn, getGameResult} from './helper'
 import {Step} from './types'
 import {TOTAL_GRIDS} from './constants'
 
@@ -51,5 +51,19 @@ describe('getTurn', () => {
         ],
       })
     ).toBe('O')
+  })
+})
+
+describe('getGameResult', () => {
+  it('should return X if X wins', () => {
+    expect(
+      getGameResult({
+        steps: [
+          {symbol: 'X', position: 0},
+          {symbol: 'X', position: 2},
+          {symbol: 'X', position: 1},
+        ],
+      })
+    ).toBe('X')
   })
 })
