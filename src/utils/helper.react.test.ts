@@ -79,21 +79,35 @@ describe('getGameResult', () => {
     ).toBe(GAME_RESULT.oWin)
   })
 
-  it('should return tie if all grids have been filled', () => {
+  it('should return tie if all grids have been filled but no winners', () => {
+    expect(
+      getGameResult({
+        steps: [
+          {symbol: 'X', position: 0},
+          {symbol: 'X', position: 2},
+          {symbol: 'X', position: 3},
+          {symbol: 'X', position: 7},
+          {symbol: 'X', position: 8},
+          {symbol: 'O', position: 1},
+          {symbol: 'X', position: 4},
+          {symbol: 'O', position: 5},
+          {symbol: 'X', position: 6},
+        ],
+      })
+    ).toBe(GAME_RESULT.tie)
+  })
+
+  it('should return ongoing if not all grids have been filled and no winners', () => {
     expect(
       getGameResult({
         steps: [
           {symbol: 'X', position: 0},
           {symbol: 'O', position: 1},
-          {symbol: 'X', position: 2},
-          {symbol: 'O', position: 3},
           {symbol: 'X', position: 4},
           {symbol: 'O', position: 5},
           {symbol: 'X', position: 6},
-          {symbol: 'O', position: 7},
-          {symbol: 'X', position: 8},
         ],
       })
-    ).toBe(GAME_RESULT.tie)
+    ).toBe(GAME_RESULT.ongoing)
   })
 })
