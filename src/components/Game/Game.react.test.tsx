@@ -53,4 +53,22 @@ describe('Game', () => {
     wrapper.find('[data-testid="game-grid"]').at(6).simulate('click')
     expect(component.text()).toBe('X Wins!')
   })
+
+  it('should show O wins', () => {
+    const component = wrapper.find('[data-testid="announcer"]')
+
+    // X clicking on top left
+    wrapper.find('[data-testid="game-grid"]').at(0).simulate('click')
+    // O clicking on top middle
+    wrapper.find('[data-testid="game-grid"]').at(1).simulate('click')
+    // X clicking on middle left
+    wrapper.find('[data-testid="game-grid"]').at(3).simulate('click')
+    // O clicking on center
+    wrapper.find('[data-testid="game-grid"]').at(4).simulate('click')
+    // X clicking on bottom right
+    wrapper.find('[data-testid="game-grid"]').at(8).simulate('click')
+    // O clicking on center
+    wrapper.find('[data-testid="game-grid"]').at(7).simulate('click')
+    expect(component.text()).toBe('O Wins!')
+  })
 })
