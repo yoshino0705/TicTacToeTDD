@@ -1,4 +1,4 @@
-import {FC, useState} from 'react'
+import {FC} from 'react'
 import classNames from 'classnames'
 
 import {Grid} from '../Grid'
@@ -7,8 +7,12 @@ import {Step} from '../../utils/types'
 import {getGrids, getTurn} from '../../utils/helper'
 import './Board.css'
 
-export const Board: FC = () => {
-  const [steps, setSteps] = useState<Step[]>([])
+interface BoardProps {
+  steps: Step[]
+  setSteps: Function
+}
+
+export const Board: FC<BoardProps> = ({steps, setSteps}) => {
   const grids = getGrids({steps})
 
   return (
