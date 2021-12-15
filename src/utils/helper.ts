@@ -1,5 +1,5 @@
 import {Step} from './types'
-import {TOTAL_GRIDS, SIZE} from './constants'
+import {TOTAL_GRIDS} from './constants'
 
 interface GetSymbolProps {
   grids: string[]
